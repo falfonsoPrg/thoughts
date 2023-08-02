@@ -62,7 +62,7 @@ function borrar(idparametro) {
 // }
 
 function traerDatos() {
-    fetch(`http://mammoth-ancient-egg.glitch.me/posts`)
+    fetch(`https://mammoth-ancient-egg.glitch.me/posts`)
         .then(response => response.json())
         .then(post => {
             console.log(post)
@@ -78,7 +78,7 @@ function traerDatos() {
 function guardarEnDb(titulo, url) {
     const newPost = { id: uuidv4(), title: titulo, content: url };
     console.log(newPost)
-    fetch('http://mammoth-ancient-egg.glitch.me/posts', {
+    fetch('https://mammoth-ancient-egg.glitch.me/posts', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ function guardarEnDb(titulo, url) {
 
 function borrarDb(postId) {
     // DELETE request to delete a post
-    fetch(`http://mammoth-ancient-egg.glitch.me/posts/${postId}`, {
+    fetch(`https://mammoth-ancient-egg.glitch.me/posts/${postId}`, {
         method: 'DELETE',
     })
         .then(response => response.json())
